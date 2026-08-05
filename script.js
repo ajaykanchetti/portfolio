@@ -26,31 +26,7 @@
   }, 40);
 })();
 
-// =========================================================
-// 2. CUSTOM CURSOR WITH SPRING EASE
-// =========================================================
-(function () {
-  const dot = document.getElementById('cursorDot');
-  const outline = document.getElementById('cursorOutline');
-  if (!dot || !outline) return;
 
-  let mouseX = 0, mouseY = 0;
-  let outlineX = 0, outlineY = 0;
-
-  window.addEventListener('mousemove', (e) => {
-    mouseX = e.clientX;
-    mouseY = e.clientY;
-    dot.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0) translate(-50%, -50%)`;
-  });
-
-  function animateOutline() {
-    outlineX += (mouseX - outlineX) * 0.15;
-    outlineY += (mouseY - outlineY) * 0.15;
-    outline.style.transform = `translate3d(${outlineX}px, ${outlineY}px, 0) translate(-50%, -50%)`;
-    requestAnimationFrame(animateOutline);
-  }
-  animateOutline();
-})();
 
 // =========================================================
 // 3. MOUSE SPOTLIGHT EFFECT ON CARDS
